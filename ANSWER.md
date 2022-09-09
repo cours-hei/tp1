@@ -1,34 +1,34 @@
 # Answers
 
-Nom : 
-Prénom : 
+Last name : 
+First name : 
 
 # 1.
-Qu'est-ce qu'une instance EC2 ?
+What is an EC2 instance?
 
 # 2.
-Qu'est-ce qu'un VPC ?
+What is a VPC?
 
 # 3.
-A quoi sert un NSG ?
+What is an NSG?
 
 # 4.
-Quelles sont les 5 propriétés désirables du cloud ?
+What are the 5 desirable properties of the cloud?
 
 # 5.
-Qu'est-ce que l'A/B Testing ?
+What is A/B Testing?
 
 # 6.
-Comment programmer le cloud ?
+What is the technique for creating VMs with files?
 
 # 7.
-Quelle est la technique pour faire un déploiement sans interruption de service ?
+What is the technique for a non-disruptive deployment?
 
 # 8.
-Qu'est-ce que le Canary release ?
+What is the Canary release?
 
 # 9.
-Comment changer de taille de machine virtuelle ?
+How do I change the size of a virtual machine?
 
 # 10.
-Qu'est-ce que le Blue/Green deployment ?
+What is Blue/Green deployment?

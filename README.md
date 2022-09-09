@@ -1,90 +1,90 @@
-# Cloud public - TP1
+# Public Cloud - TP1
 
 ## Instructions
-Durant ce TP, nous allons mettre en oeuvre l'infrastructure-as-a-service que nous avons vu durant le cours. Pour ce faire, nous allons déployer l'application PetClinic sur une machine virtuelle.
+In this tutorial, we will implement the infrastructure-as-a-service that we have seen in the course. To do this, we will deploy the PetClinic application on a virtual machine.
 
-Voici à quoi ressemble l'architecture de l'application
+Here is what the architecture of the application looks like
 ![Architecture](https://spring-petclinic.github.io/images/petclinic-microservices-architecture.png "Architecture")
 
-Le TP est découpé en deux parties : le fichier `README.md` suivant, ainsi qu'un fichier ```ÀNSWER.md``` qui contient 10 questions à répondre.
+The tutorial is divided into two parts: the following `README.md` file, and an `ANSWER.md` file which contains 10 questions to answer.
 
-Le principe du TP est de répondre aux questions dans le fichier `ANSWER.md` et de le pousser sur votre repository. Le reste est expliqué au fur et à mesure de ce TP.
+The idea of the tutorial is to answer the questions in the `ANSWER.md` file and push it to your repository. The rest is explained as the tutorial progresses.
 
-## 1 : Git
-### 1.0 : Forker le repo du lab
-Suivre le lien présent au tableau pour forker ce repository dans votre repository personnel GitHub Classroom. Si vous avez accès au repository, cela veut dire que la manipulation a bien fonctionné.
+## 1: Git
+### 1.0: Fork the lab repo
+Follow the link on the board to fork this repository into your personal GitHub Classroom repository. If you have access to the repository, it means that the manipulation worked well.
 
-### 1.1 : Cloner le repository
-Clonez le repo nouvellement copié sur votre ordinateur 
-> A partir de maintenant, **vous ne travaillerez plus que dans votre copie locale**. Vous n'avez plus à revenir sur [le projet parent](https://github.com/cours-hei/tp1).
+### 1.1 : Clone the repository
+Clone the newly copied repo on your computer 
+> From now on, **you will only work in your local copy**.
  
-### 1.2 : Créer une issue
-> ⚠️  **WARNING**: Créez une issue s'intitulant `1.2` ayant pour contenu les commandes que vous avez effectuées pour réaliser le clone de votre repo git.
+### 1.2: Create an issue
+> Create an issue called `1.2` with the commands you made to clone your git repo as the contents.
 
-## 2 : IaaS
-Dans un premier temps, nous allons déployer cette architecture sur une machine virtuelle.
+## 2: IaaS
+First, we will deploy this architecture on a virtual machine.
 
-### 2.0 : Créer une machine virtuelle AWS
-Pour créer une machine EC2, aller sur le portail AWS.
+### 2.0: Create an AWS virtual machine
+To create an EC2 machine, go to the AWS portal.
 
-Il faut tout d'abord bien choisir la région. Faites attention et choisir la région **Europe (Irland) eu-west-1** dans le menu déroulant en haut à droite.
+First of all, you have to choose the region. Be careful and choose the region **Europe (Ireland) eu-west-1** in the drop-down menu at the top right.
 
-Ensuite, cliquer sur le menu EC2. Cliquer ensuite sur le bouton Launch Instance.
+Then click on the EC2 menu. Then click on the Launch Instance button.
 
-Il est conseillé de démarrer une machine virtuelle Ubuntu afin de pouvoir installer l'application facilement.
+It is advisable to start an Ubuntu virtual machine in order to install the application easily.
 
-Pour faciliter l'organisation des machines virtuelles, merci de nommer votre machine `vm-prenom-nom`. Faites de même lors de la création du **security group**, il faudra alors le nommer `sg-prenom-nom`.
+To facilitate the organisation of virtual machines, please name your machine `firstname-lastname-vm`. Do the same when creating the **security group**, you will need to name it `firstname-lastname-sg`.
 
-### 2.1 : Se connecter à la machine
-Une fois la machine virtuelle créée, se connecter à la machine
+### 2.1: Connect to the machine
+Once the virtual machine is created, connect to the machine
 ```bash
 ssh ubuntu@<public-ip>
 ```
 
-### 2.2 : Installer les outils nécessaires
-Installer ensuite les outils nécessaires au démarrage de l'application. Pour faire tourner correctement l'application, les outils à installer sont : `git`, `maven` et `openjdk-8-jdk`
-> ⚠️  **WARNING**: Créez une issue s'intitulant `2.2` ayant pour contenu les commandes que vous avez effectuées
+### 2.2: Install the necessary tools
+Next, install the tools needed to start the application. To run the application correctly, the tools to install are: `git`, `maven` and `openjdk-8-jdk`.
+> Create an issue called `2.2` with the contents of the commands you have made
 
-### 2.3 : Cloner le repo Spring PetClinic
-Cloner ensuite le repo PetClinic https://github.com/spring-projects/spring-petclinic
-> ⚠️  **WARNING**: Créez une issue s'intitulant `2.3` ayant pour contenu les commandes que vous avez effectuées
+### 2.3: Clone the Spring PetClinic repo
+Then clone the PetClinic repo `https://github.com/spring-projects/spring-petclinic`
+> ⚠️ **WARNING**: Create an issue called `2.3` with the commands you have done
 
-### 2.4 : Lancer Spring PetClinic
-Lancer la commande suivante afin de compiler, puis lancer l'application
+### 2.4 : Running Spring PetClinic
+Run the following command to compile, then run the application
 ```bash
 cd spring-petclinic
 ./mvnw package
 java -jar target/*.jar
 ```
 
-### 2.5 : Se connecter à l'application
-Maintenant, essayer de se connecter à l'application. Il sera normalement impossible de s'y connecter.
-> ⚠️  **WARNING**: Créez une issue s'intitulant `2.5` expliquant pourquoi il est impossible de se connecter à l'application
+### 2.5: Connect to the application
+Now try to connect to the application. It will normally be impossible to connect to it.
+> Create an exit called `2.5` explaining why you cannot connect to the application
 
-### 2.6 Ouvrir le firewall
-Afin de pouvoir se connecter à l'application, il faut ouvrir le port où écoute l'application. Le port d'écoute est le `8080`
+### 2.6 Opening the Firewall
+In order to connect to the application, you need to open the port where the application is listening. The listening port is `8080`.
 
-Pour ouvrir le port, il est nécessaire d'aller dans les ***Security Groups***.
-> ⚠️  **WARNING**: Créez une issue s'intitulant `2.6` ayant pour contenu les commandes que vous avez effectuées
+To open the port, it is necessary to go to the ***Security Groups***.
+> Create an issue called `2.6` with the commands you have made as its content
 
-### 2.7 : Vérifier le bon fonctionnement
-Ouvrir le navigateur et aller à l'url suivante afin de voir l'application Petclinic : `http://<public-ip>:<port>`
+### 2.7: Verify proper operation
+Open the browser and go to the following url to see the Petclinic application: `http://<public-ip>:<port>`
 
-### 2.8 : Installer MariaDB
-Par défault, l'application démarre sans serveur de base de données et donc ne persiste pas les données que vous pouvez modifier. Afin de pouvoir persister les données, il est nécessaire d'installer MariaDB et de modifier le fichier de configuration de l'application afin de pointer sur la base de données.
+### 2.8 : Install MariaDB
+By default, the application starts without a database server and therefore does not persist the data you can modify. In order to be able to persist the data, it is necessary to install MariaDB and to modify the configuration file of the application in order to point on the database.
 
-Installer MariaDB en suivant le mode opératoire suivant : https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-ubuntu-20-04
-> ⚠️  **WARNING**: Créez une issue s'intitulant `2.8` ayant pour contenu les commandes que vous avez effectuées
+Install MariaDB as follows: `https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-ubuntu-20-04`
+> Create an issue called `2.8` with the commands you have made
 
-### 2.9 : Installer les schémas et les données
-Dans le repo git, il existe les instructions afin de créer la base de données PetClinic. Ces instructions sont situés ici : `spring-petclinic/src/main/resources/db/mysql/`
+### 2.9 : Installing schemas and data
+In the git repo, there are instructions to create the PetClinic database. These instructions are located here: `spring-petclinic/src/main/resources/db/mysql/`
 
-Le fichier txt présent dans le répertoire fait référence à Docker. Dans le cadre de ce TP, nous n'allons pas installer Docker, puisque nous avons déjà installé MariaDB.
+The txt file in the directory refers to Docker. For the purposes of this tutorial, we will not be installing Docker, as we have already installed MariaDB.
 
-Les fichiers à jouer sur la base de données MariaDB sont dans l'ordre : `user.sql`, `schema.sql` et `data.sql`
+The files to play with on the MariaDB database are in order: `user.sql`, `schema.sql` and `data.sql`.
 
-### 2.10 : Redémarrer l'application
-Redémarrer l'application PetClinic avec le bon profil afin que l'application puisse utiliser le serveur MySQL. La commande doit être la suivante : `java -Dspring.profiles.active=mysql -jar target/*.jar`
+### 2.10 : Restarting the application
+Restart the PetClinic application with the correct profile so that the application can use the MySQL server. The command should be: `java -Dspring.profiles.active=mysql -jar target/*.jar`
 
-### 2.11 : Vérifier le bon fonctionnement
-Ouvrir le navigateur et aller à l'url suivante afin de voir l'application Petclinic : `http://<public-ip>:<port>`
+### 2.11: Verify proper operation
+Open the browser and go to the following url to see the Petclinic application: `http://<public-ip>:<port>`
