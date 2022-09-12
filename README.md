@@ -4,7 +4,7 @@
 In this tutorial, we will implement the infrastructure-as-a-service that we have seen in the course. To do this, we will deploy the PetClinic application on a virtual machine.
 
 Here is what the architecture of the application looks like
-![Architecture](https://spring-petclinic.github.io/images/petclinic-microservices-architecture.png "Architecture")
+![Architecture](https://pbs.twimg.com/media/CxsvUT8WIAAgUcA?format=jpg "Architecture")
 
 The tutorial is divided into two parts: the following `README.md` file, and an `ANSWER.md` file which contains 10 questions to answer.
 
@@ -31,7 +31,7 @@ First of all, you have to choose the region. Be careful and choose the region **
 
 Then click on the EC2 menu. Then click on the Launch Instance button.
 
-It is advisable to start an Ubuntu virtual machine in order to install the application easily.
+It is advisable to start an Ubuntu virtual machine in order to install the application easily. The type of the VM should be `t2.micro`.
 
 To facilitate the organisation of virtual machines, please name your machine `firstname-lastname-vm`. Do the same when creating the **security group**, you will need to name it `firstname-lastname-sg`.
 
@@ -42,7 +42,7 @@ ssh ubuntu@<public-ip>
 ```
 
 ### 2.2: Install the necessary tools
-Next, install the tools needed to start the application. To run the application correctly, the tools to install are: `git`, `maven` and `openjdk-8-jdk`.
+Next, install the tools needed to start the application. To run the application correctly, the tools to install are: `git`, `maven` and `openjdk-11-jdk`.
 > Create an issue called `2.2` with the contents of the commands you have made
 
 ### 2.3: Clone the Spring PetClinic repo
@@ -59,7 +59,7 @@ java -jar target/*.jar
 
 ### 2.5: Connect to the application
 Now try to connect to the application. It will normally be impossible to connect to it.
-> Create an exit called `2.5` explaining why you cannot connect to the application
+> Create an issue called `2.5` explaining why you cannot connect to the application
 
 ### 2.6 Opening the Firewall
 In order to connect to the application, you need to open the port where the application is listening. The listening port is `8080`.
